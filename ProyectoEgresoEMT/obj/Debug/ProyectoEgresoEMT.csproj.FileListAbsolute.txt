@@ -8,3 +8,4 @@ C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\obj\De
 C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\obj\Debug\ProyectoEgresoEMT.exe
 C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\obj\Debug\ProyectoEgresoEMT.pdb
 C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\obj\Debug\ProyectoEgresoEMT.Form1.resources
+C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\obj\Debug\ProyectoEgresoEMT.Form2.resources
