@@ -12,9 +12,32 @@ namespace ProyectoEgresoEMT
 {
     public partial class Form1 : Form
     {
+        string nombre = "admin", contraseña = "admin";
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == nombre && txtContraseña.Text == contraseña)
+            {
+                MessageBox.Show("Bienvenido");
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrecta");
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
