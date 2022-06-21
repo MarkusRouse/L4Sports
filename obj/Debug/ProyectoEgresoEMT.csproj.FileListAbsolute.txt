@@ -1,0 +1,10 @@
+C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\bin\Debug\ProyectoEgresoEMT.exe.config
+C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\bin\Debug\ProyectoEgresoEMT.exe
+C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\bin\Debug\ProyectoEgresoEMT.pdb
+C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\obj\Debug\ProyectoEgresoEMT.csprojAssemblyReference.cache
+C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\obj\Debug\ProyectoEgresoEMT.Form1.resources
+C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\obj\Debug\ProyectoEgresoEMT.Properties.Resources.resources
+C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\obj\Debug\ProyectoEgresoEMT.csproj.GenerateResource.cache
+C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\obj\Debug\ProyectoEgresoEMT.csproj.CoreCompileInputs.cache
+C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\obj\Debug\ProyectoEgresoEMT.exe
+C:\Users\MarkusRouse\Desktop\Proyecto\ProyectoEgresoEMT\ProyectoEgresoEMT\obj\Debug\ProyectoEgresoEMT.pdb
