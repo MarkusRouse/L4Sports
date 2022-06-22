@@ -12,7 +12,6 @@ namespace AdminAplication
 {
     public partial class Form2 : Form
     {
-        
         List<User> listaUsuarios = new List<User>();
         public Form2()
         {
@@ -38,11 +37,27 @@ namespace AdminAplication
             
         }
 
+        public void CreateUser(string nombre, string contraseña)
+        {
+            User user1 = new User(nombre, contraseña);
+            listaUsuarios.Add(user1);
+        }
+       
     }
-
-    class User
+    public class ListaDeUsuarios
     {
-        string nombre, contraseña, mail, tipo_usuario;
+        List<User> listaUsuarios = new List<User>();
+        public List<User> GetLista
+        {
+            get
+            {
+                return listaUsuarios;
+            }
+        }
+    }
+    public class User
+    {
+        string nombre, contraseña;
 
         public string Nombre
         {
@@ -68,40 +83,15 @@ namespace AdminAplication
             }
         }
 
-        public string Mail
-        {
-            set
-            {
-                mail = value;
-            }
-            get
-            {
-                return mail;
-            }
-        }
-
-        public string Tipo_usuario
-        {
-            set
-            {
-                tipo_usuario = value;
-            }
-            get
-            {
-                return tipo_usuario;
-            }
-        }
-
         public User()
         {
 
         }
-        public User(string nombre,string contraseña,string mail, string tipo_usuario)
+        public User(string nombre,string contraseña)
         {
             this.nombre = nombre;
             this.contraseña = contraseña;
-            this.mail = mail;
-            this.tipo_usuario = tipo_usuario;
         }
     }
+
 }

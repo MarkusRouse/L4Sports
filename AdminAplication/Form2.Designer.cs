@@ -49,7 +49,7 @@
             this.txtboxNombreAdmin = new System.Windows.Forms.TextBox();
             this.btnEliminarAdministrador = new System.Windows.Forms.Button();
             this.btnAñadirAdministrador = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstboxAdministradores = new System.Windows.Forms.ListBox();
             this.pnlAdmUsuario.SuspendLayout();
             this.pnlAdmAdministradores.SuspendLayout();
             this.SuspendLayout();
@@ -192,7 +192,7 @@
             this.pnlAdmAdministradores.Controls.Add(this.txtboxNombreAdmin);
             this.pnlAdmAdministradores.Controls.Add(this.btnEliminarAdministrador);
             this.pnlAdmAdministradores.Controls.Add(this.btnAñadirAdministrador);
-            this.pnlAdmAdministradores.Controls.Add(this.listBox1);
+            this.pnlAdmAdministradores.Controls.Add(this.lstboxAdministradores);
             this.pnlAdmAdministradores.Enabled = false;
             this.pnlAdmAdministradores.Location = new System.Drawing.Point(150, 5);
             this.pnlAdmAdministradores.Name = "pnlAdmAdministradores";
@@ -251,13 +251,13 @@
             this.btnAñadirAdministrador.Text = "Añadir administrador";
             this.btnAñadirAdministrador.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // lstboxAdministradores
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(352, 3);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(299, 381);
-            this.listBox1.TabIndex = 0;
+            this.lstboxAdministradores.FormattingEnabled = true;
+            this.lstboxAdministradores.Location = new System.Drawing.Point(352, 3);
+            this.lstboxAdministradores.Name = "lstboxAdministradores";
+            this.lstboxAdministradores.Size = new System.Drawing.Size(299, 381);
+            this.lstboxAdministradores.TabIndex = 0;
             // 
             // Form2
             // 
@@ -271,7 +271,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Administrador";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.pnlAdmUsuario.ResumeLayout(false);
             this.pnlAdmUsuario.PerformLayout();
@@ -304,6 +304,6 @@
         private System.Windows.Forms.TextBox txtboxNombreAdmin;
         private System.Windows.Forms.Button btnEliminarAdministrador;
         private System.Windows.Forms.Button btnAñadirAdministrador;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstboxAdministradores;
     }
 }

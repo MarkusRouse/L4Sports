@@ -9,3 +9,14 @@ C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\L4Sports\AdminAplication\obj\Debu
 C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\L4Sports\AdminAplication\obj\Debug\AdminAplication.pdb
 C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\L4Sports\AdminAplication\obj\Debug\AdminAplication.Form1.resources
 C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\L4Sports\AdminAplication\obj\Debug\AdminAplication.Form2.resources
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\AdminAplication\bin\Debug\AdminAplication.exe.config
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\AdminAplication\bin\Debug\AdminAplication.exe
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\AdminAplication\bin\Debug\AdminAplication.pdb
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\AdminAplication\obj\Debug\AdminAplication.csprojAssemblyReference.cache
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\AdminAplication\obj\Debug\AdminAplication.Form1.resources
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\AdminAplication\obj\Debug\AdminAplication.Form2.resources
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\AdminAplication\obj\Debug\AdminAplication.Properties.Resources.resources
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\AdminAplication\obj\Debug\AdminAplication.csproj.GenerateResource.cache
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\AdminAplication\obj\Debug\AdminAplication.csproj.CoreCompileInputs.cache
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\AdminAplication\obj\Debug\AdminAplication.exe
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\AdminAplication\obj\Debug\AdminAplication.pdb

@@ -6,17 +6,17 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AdminAplication
 {
- 
+
     public partial class Form1 : Form
     {
-        List<User> listaUsuarios = new List<User>();
-        string nombre = "admin", contraseña = "admin";
 
+        ListaDeUsuarios listaUsuarios = new ListaDeUsuarios();
         public Form1()
         {
             InitializeComponent();
@@ -24,21 +24,24 @@ namespace AdminAplication
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            User user1 = new User("admin","admin");
+            listaUsuarios.GetLista.Add(user1);
         }
-
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            if (txtboxNombre.Text == nombre && txtboxContraseña.Text == contraseña)
+            for(int i = 0; i < listaUsuarios.GetLista.Count(); i++)
             {
-                MessageBox.Show("Bienvenido");
-                Form2 ventanaAdmin = new Form2();
-                this.Hide();
-                ventanaAdmin.Show();
-            }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrecta");
+                if (txtboxNombre.Text == listaUsuarios.GetLista[i].Nombre && txtboxContraseña.Text == listaUsuarios.GetLista[i].Contraseña)
+                {
+                    MessageBox.Show("Bienvenido");
+                    Form2 ventanaAdmin = new Form2();
+                    this.Hide();
+                    ventanaAdmin.Show();
+                }
+                else if (i + 1 == listaUsuarios.GetLista.Count())
+                {
+                    MessageBox.Show("Usuario o contraseña incorrecta");
+                }
             }
         }
 
