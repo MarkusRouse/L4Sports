@@ -1,0 +1,10 @@
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\bin\Debug\ClientAplication.exe.config
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\bin\Debug\ClientAplication.exe
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\bin\Debug\ClientAplication.pdb
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\obj\Debug\ClientAplication.csprojAssemblyReference.cache
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\obj\Debug\ClientAplication.Form1.resources
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\obj\Debug\ClientAplication.Properties.Resources.resources
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\obj\Debug\ClientAplication.csproj.GenerateResource.cache
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\obj\Debug\ClientAplication.csproj.CoreCompileInputs.cache
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\obj\Debug\ClientAplication.exe
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\obj\Debug\ClientAplication.pdb

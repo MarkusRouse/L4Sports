@@ -11,11 +11,10 @@ using System.Windows.Forms;
 
 namespace ClientAplication
 {
- 
+    
     public partial class Form1 : Form
     {
         List<User> listaUsuarios = new List<User>();
-        string nombre = "admin", contraseña = "admin";
         public Form1()
         {
             InitializeComponent();
@@ -23,19 +22,22 @@ namespace ClientAplication
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            CrearUsuarios();
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            if (txtboxNombre.Text == nombre && txtboxContraseña.Text == contraseña)
+            for (int i = 0; i < listaUsuarios.Count(); i++)
             {
-                MessageBox.Show("Bienvenido");
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrecta");
+                if ((txtboxNombre.Text == listaUsuarios[i].Nombre || txtboxNombre.Text == listaUsuarios[i].Mail) && txtboxContraseña.Text == listaUsuarios[i].Contraseña)
+                {
+                    MessageBox.Show("Bienvenido");
+                    break;
+                }
+                else if (i + 1 == listaUsuarios.Count())
+                {
+                    MessageBox.Show("Usuario o contraseña incorrecta");
+                }
             }
         }
 
@@ -44,14 +46,33 @@ namespace ClientAplication
 
         }
 
+        private void txtboxNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
         
         }
+        public void CreateUser(string nombre,string contraseña,string mail)
+        {
+            User user1 = new User(nombre,contraseña,mail);
+            listaUsuarios.Add(user1);
+        }
+        public void CrearUsuarios()
+        {
+            CreateUser("user", "user", "correo@gmail.com");
+            CreateUser("user1", "user1", "correo1@gmail.com");
+            CreateUser("user2", "user2", "correo2@gmail.com");
+            CreateUser("user3", "user3", "correo3@gmail.com");
+            CreateUser("user4", "user4", "correo4@gmail.com");
+            CreateUser("user5", "user5", "correo5@gmail.com");
+        }
     }
     class User
     {
-        string nombre, contraseña, mail, tipo_usuario;
+        string nombre, contraseña, mail;
 
         public string Nombre
         {
@@ -89,28 +110,15 @@ namespace ClientAplication
             }
         }
 
-        public string Tipo_usuario
-        {
-            set
-            {
-                tipo_usuario = value;
-            }
-            get
-            {
-                return tipo_usuario;
-            }
-        }
-
         public User()
         {
 
         }
-        public User(string nombre, string contraseña, string mail, string tipo_usuario)
+        public User(string nombre, string contraseña, string mail)
         {
             this.nombre = nombre;
             this.contraseña = contraseña;
             this.mail = mail;
-            this.tipo_usuario = tipo_usuario;
         }
     }
 }

@@ -69,11 +69,13 @@
             this.txtboxNombre.Name = "txtboxNombre";
             this.txtboxNombre.Size = new System.Drawing.Size(132, 20);
             this.txtboxNombre.TabIndex = 7;
+            this.txtboxNombre.TextChanged += new System.EventHandler(this.txtboxNombre_TextChanged);
             // 
             // txtboxContraseña
             // 
             this.txtboxContraseña.Location = new System.Drawing.Point(176, 159);
             this.txtboxContraseña.Name = "txtboxContraseña";
+            this.txtboxContraseña.PasswordChar = '*';
             this.txtboxContraseña.Size = new System.Drawing.Size(132, 20);
             this.txtboxContraseña.TabIndex = 8;
             // 
