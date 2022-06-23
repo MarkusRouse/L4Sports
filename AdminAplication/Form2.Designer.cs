@@ -101,12 +101,10 @@
             this.pnlAdmUsuario.Controls.Add(this.btnEliminarUsuario);
             this.pnlAdmUsuario.Controls.Add(this.button5);
             this.pnlAdmUsuario.Controls.Add(this.lstboxUsuarios);
-            this.pnlAdmUsuario.Enabled = false;
             this.pnlAdmUsuario.Location = new System.Drawing.Point(147, 5);
             this.pnlAdmUsuario.Name = "pnlAdmUsuario";
             this.pnlAdmUsuario.Size = new System.Drawing.Size(651, 386);
             this.pnlAdmUsuario.TabIndex = 5;
-            this.pnlAdmUsuario.Visible = false;
             // 
             // label3
             // 
@@ -165,6 +163,7 @@
             this.btnEliminarUsuario.TabIndex = 2;
             this.btnEliminarUsuario.Text = "Eliminar usuario";
             this.btnEliminarUsuario.UseVisualStyleBackColor = true;
+            this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
             // 
             // button5
             // 
@@ -183,6 +182,7 @@
             this.lstboxUsuarios.Name = "lstboxUsuarios";
             this.lstboxUsuarios.Size = new System.Drawing.Size(299, 381);
             this.lstboxUsuarios.TabIndex = 0;
+            this.lstboxUsuarios.SelectedIndexChanged += new System.EventHandler(this.lstboxUsuarios_SelectedIndexChanged);
             // 
             // pnlAdmAdministradores
             // 
@@ -264,12 +264,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pnlAdmAdministradores);
             this.Controls.Add(this.pnlAdmUsuario);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.pnlAdmAdministradores);
             this.Name = "Form2";
             this.Text = "Administrador";
             this.Load += new System.EventHandler(this.Form2_Load);

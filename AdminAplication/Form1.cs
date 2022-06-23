@@ -12,11 +12,10 @@ using System.Windows.Forms;
 
 namespace AdminAplication
 {
-
+   
     public partial class Form1 : Form
     {
-
-        ListaDeUsuarios listaUsuarios = new ListaDeUsuarios();
+        string nombreAdmin = "admin", contraseñaAdmin = "admin";
         public Form1()
         {
             InitializeComponent();
@@ -24,25 +23,21 @@ namespace AdminAplication
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            User user1 = new User("admin","admin");
-            listaUsuarios.GetLista.Add(user1);
         }
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < listaUsuarios.GetLista.Count(); i++)
+            if (txtboxNombre.Text == nombreAdmin && txtboxContraseña.Text == contraseñaAdmin)
             {
-                if (txtboxNombre.Text == listaUsuarios.GetLista[i].Nombre && txtboxContraseña.Text == listaUsuarios.GetLista[i].Contraseña)
-                {
-                    MessageBox.Show("Bienvenido");
-                    Form2 ventanaAdmin = new Form2();
-                    this.Hide();
-                    ventanaAdmin.Show();
-                }
-                else if (i + 1 == listaUsuarios.GetLista.Count())
-                {
-                    MessageBox.Show("Usuario o contraseña incorrecta");
-                }
+                MessageBox.Show("Bienvenido");
+                Form2 ventanaAdmin = new Form2();
+                this.Hide();
+                ventanaAdmin.Show();
             }
+            else
+            {
+                MessageBox.Show("Nombre de usuario o contraseña incorrecta");
+            }
+                                    
         }
 
         private void txtContraseña_TextChanged(object sender, EventArgs e)
