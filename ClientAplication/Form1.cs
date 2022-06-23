@@ -32,6 +32,10 @@ namespace ClientAplication
                 if ((txtboxNombre.Text == listaUsuarios[i].Nombre || txtboxNombre.Text == listaUsuarios[i].Mail) && txtboxContraseña.Text == listaUsuarios[i].Contraseña)
                 {
                     MessageBox.Show("Bienvenido");
+                    Form2 frm2 = new Form2();
+                    this.Hide();
+                    frm2.Show();
+
                     break;
                 }
                 else if (i + 1 == listaUsuarios.Count())
@@ -68,6 +72,13 @@ namespace ClientAplication
             CreateUser("user3", "user3", "correo3@gmail.com");
             CreateUser("user4", "user4", "correo4@gmail.com");
             CreateUser("user5", "user5", "correo5@gmail.com");
+        }
+
+        private void btnIniciarInvitado_Click(object sender, EventArgs e)
+        {
+            Form2 frm2 = new Form2();
+            this.Hide();
+            frm2.Show();
         }
     }
     class User

@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtboxNombre = new System.Windows.Forms.TextBox();
             this.txtboxContraseña = new System.Windows.Forms.TextBox();
+            this.btnIniciarInvitado = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnIniciarSesion
@@ -79,11 +80,22 @@
             this.txtboxContraseña.Size = new System.Drawing.Size(132, 20);
             this.txtboxContraseña.TabIndex = 8;
             // 
+            // btnIniciarInvitado
+            // 
+            this.btnIniciarInvitado.Location = new System.Drawing.Point(395, 322);
+            this.btnIniciarInvitado.Name = "btnIniciarInvitado";
+            this.btnIniciarInvitado.Size = new System.Drawing.Size(97, 23);
+            this.btnIniciarInvitado.TabIndex = 9;
+            this.btnIniciarInvitado.Text = "Invitado";
+            this.btnIniciarInvitado.UseVisualStyleBackColor = true;
+            this.btnIniciarInvitado.Click += new System.EventHandler(this.btnIniciarInvitado_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 357);
+            this.Controls.Add(this.btnIniciarInvitado);
             this.Controls.Add(this.txtboxContraseña);
             this.Controls.Add(this.txtboxNombre);
             this.Controls.Add(this.label2);
@@ -105,6 +117,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtboxNombre;
         private System.Windows.Forms.TextBox txtboxContraseña;
+        private System.Windows.Forms.Button btnIniciarInvitado;
     }
 }
 
