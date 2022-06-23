@@ -27,36 +27,37 @@ namespace AdminAplication
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (listaClientes.Count == 0)
+            if (txtboxContraseñaUsuario.Text != "" && txtboxNombreUsuario.Text != "" && txtboxMailUsuario.Text != "")
             {
-                Cliente cliente = new Cliente(txtboxNombreUsuario.Text, txtboxContraseñaUsuario.Text, txtboxMailUsuario.Text);
-                listaClientes.Add(cliente);
-                lstboxUsuarios.Items.Add(cliente.Datos2());
-            }
-            else
-            {
-                foreach (Cliente usuario in listaClientes)
+                if (listaClientes.Count == 0)
                 {
-                    if (usuario.Nombre == txtboxNombreUsuario.Text)
+                    Cliente cliente = new Cliente(txtboxNombreUsuario.Text, txtboxContraseñaUsuario.Text, txtboxMailUsuario.Text);
+                    listaClientes.Add(cliente);
+                    lstboxUsuarios.Items.Add(cliente.Datos2());
+                }
+                else
+                {
+                    foreach (Cliente usuario in listaClientes)
                     {
-                        if (usuario.Contraseña == txtboxContraseñaUsuario.Text)
+                        if (usuario.Nombre == txtboxNombreUsuario.Text || usuario.Mail == txtboxMailUsuario.Text)
                         {
-                            if (usuario.Mail == txtboxMailUsuario.Text)
-                            {
-                                MessageBox.Show("El usuario ya existe, por favor ingrese uno con otras características");
-                                break;
-                            }
-                            else
-                            {
-                                Cliente cliente = new Cliente(txtboxNombreUsuario.Text, txtboxContraseñaUsuario.Text, txtboxMailUsuario.Text);
-                                listaClientes.Add(cliente);
-                                lstboxUsuarios.Items.Add(cliente.Datos2());
-                                break;
-                            }
+                            MessageBox.Show("El usuario ya existe, por favor ingrese uno con otras características");
+                            break;
+                        }
+                        else if (listaClientes.Last() == usuario)
+                        {
+                            Cliente cliente = new Cliente(txtboxNombreUsuario.Text, txtboxContraseñaUsuario.Text, txtboxMailUsuario.Text);
+                            listaClientes.Add(cliente);
+                            lstboxUsuarios.Items.Add(cliente.Datos2());
+                            break;
                         }
                     }
                 }
-            }  
+            } 
+            else
+            {
+                MessageBox.Show("No debe dejar ninún espacio en blanco");
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -70,13 +71,15 @@ namespace AdminAplication
         }
         private void lstboxUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
-            lstboxUsuarios.Items.Remove(lstboxUsuarios.SelectedItem);
-            listaClientes.RemoveAt(lstboxUsuarios.SelectedIndex + 1);
+            if (lstboxUsuarios.SelectedIndex != -1)
+            {
+                lstboxUsuarios.Items.Remove(lstboxUsuarios.SelectedItem);
+                listaClientes.RemoveAt(lstboxUsuarios.SelectedIndex + 1);
+            }
         }
     }
 
