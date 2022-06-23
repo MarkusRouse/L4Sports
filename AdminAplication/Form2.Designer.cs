@@ -50,6 +50,7 @@
             this.btnEliminarAdministrador = new System.Windows.Forms.Button();
             this.btnAñadirAdministrador = new System.Windows.Forms.Button();
             this.lstboxAdministradores = new System.Windows.Forms.ListBox();
+            this.btnInicio = new System.Windows.Forms.Button();
             this.pnlAdmUsuario.SuspendLayout();
             this.pnlAdmAdministradores.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +63,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Administrar Usuarios";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -71,6 +73,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Administrar Administradores";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -89,6 +92,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Cerrar Sesión";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pnlAdmUsuario
             // 
@@ -101,10 +105,11 @@
             this.pnlAdmUsuario.Controls.Add(this.btnEliminarUsuario);
             this.pnlAdmUsuario.Controls.Add(this.button5);
             this.pnlAdmUsuario.Controls.Add(this.lstboxUsuarios);
-            this.pnlAdmUsuario.Location = new System.Drawing.Point(147, 5);
+            this.pnlAdmUsuario.Location = new System.Drawing.Point(150, 5);
             this.pnlAdmUsuario.Name = "pnlAdmUsuario";
-            this.pnlAdmUsuario.Size = new System.Drawing.Size(651, 386);
+            this.pnlAdmUsuario.Size = new System.Drawing.Size(648, 386);
             this.pnlAdmUsuario.TabIndex = 5;
+            this.pnlAdmUsuario.Visible = false;
             // 
             // label3
             // 
@@ -193,7 +198,6 @@
             this.pnlAdmAdministradores.Controls.Add(this.btnEliminarAdministrador);
             this.pnlAdmAdministradores.Controls.Add(this.btnAñadirAdministrador);
             this.pnlAdmAdministradores.Controls.Add(this.lstboxAdministradores);
-            this.pnlAdmAdministradores.Enabled = false;
             this.pnlAdmAdministradores.Location = new System.Drawing.Point(150, 5);
             this.pnlAdmAdministradores.Name = "pnlAdmAdministradores";
             this.pnlAdmAdministradores.Size = new System.Drawing.Size(651, 386);
@@ -241,6 +245,7 @@
             this.btnEliminarAdministrador.TabIndex = 2;
             this.btnEliminarAdministrador.Text = "Eliminar administrador";
             this.btnEliminarAdministrador.UseVisualStyleBackColor = true;
+            this.btnEliminarAdministrador.Click += new System.EventHandler(this.btnEliminarAdministrador_Click);
             // 
             // btnAñadirAdministrador
             // 
@@ -250,6 +255,7 @@
             this.btnAñadirAdministrador.TabIndex = 1;
             this.btnAñadirAdministrador.Text = "Añadir administrador";
             this.btnAñadirAdministrador.UseVisualStyleBackColor = true;
+            this.btnAñadirAdministrador.Click += new System.EventHandler(this.btnAñadirAdministrador_Click);
             // 
             // lstboxAdministradores
             // 
@@ -259,17 +265,28 @@
             this.lstboxAdministradores.Size = new System.Drawing.Size(299, 381);
             this.lstboxAdministradores.TabIndex = 0;
             // 
+            // btnInicio
+            // 
+            this.btnInicio.Location = new System.Drawing.Point(-3, 3);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Size = new System.Drawing.Size(144, 23);
+            this.btnInicio.TabIndex = 10;
+            this.btnInicio.Text = "Inicio";
+            this.btnInicio.UseVisualStyleBackColor = true;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pnlAdmUsuario);
+            this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pnlAdmAdministradores);
+            this.Controls.Add(this.pnlAdmUsuario);
             this.Name = "Form2";
             this.Text = "Administrador";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -298,12 +315,13 @@
         private System.Windows.Forms.TextBox txtboxContraseñaUsuario;
         private System.Windows.Forms.TextBox txtboxNombreUsuario;
         private System.Windows.Forms.Panel pnlAdmAdministradores;
+        private System.Windows.Forms.Button btnEliminarAdministrador;
+        private System.Windows.Forms.ListBox lstboxAdministradores;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtboxContraseñaAdmin;
         private System.Windows.Forms.TextBox txtboxNombreAdmin;
-        private System.Windows.Forms.Button btnEliminarAdministrador;
         private System.Windows.Forms.Button btnAñadirAdministrador;
-        private System.Windows.Forms.ListBox lstboxAdministradores;
+        private System.Windows.Forms.Button btnInicio;
     }
 }

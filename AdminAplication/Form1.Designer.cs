@@ -37,7 +37,7 @@
             // 
             // btnIniciarSesion
             // 
-            this.btnIniciarSesion.Location = new System.Drawing.Point(189, 195);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(200, 200);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(97, 23);
             this.btnIniciarSesion.TabIndex = 0;
@@ -48,7 +48,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(126, 120);
+            this.label1.Location = new System.Drawing.Point(137, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 5;
@@ -57,7 +57,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 162);
+            this.label2.Location = new System.Drawing.Point(120, 167);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 6;
@@ -65,14 +65,14 @@
             // 
             // txtboxNombre
             // 
-            this.txtboxNombre.Location = new System.Drawing.Point(176, 120);
+            this.txtboxNombre.Location = new System.Drawing.Point(187, 125);
             this.txtboxNombre.Name = "txtboxNombre";
             this.txtboxNombre.Size = new System.Drawing.Size(132, 20);
             this.txtboxNombre.TabIndex = 7;
             // 
             // txtboxContraseña
             // 
-            this.txtboxContraseña.Location = new System.Drawing.Point(176, 159);
+            this.txtboxContraseña.Location = new System.Drawing.Point(187, 164);
             this.txtboxContraseña.Name = "txtboxContraseña";
             this.txtboxContraseña.Size = new System.Drawing.Size(132, 20);
             this.txtboxContraseña.TabIndex = 8;
