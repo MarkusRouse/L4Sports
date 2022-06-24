@@ -27,21 +27,28 @@ namespace ClientAplication
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < listaUsuarios.Count(); i++)
+            if ((txtboxNombre.Text.Trim() != "" && txtboxContraseña.Text.Trim() != ""))
             {
-                if ((txtboxNombre.Text == listaUsuarios[i].Nombre || txtboxNombre.Text == listaUsuarios[i].Mail) && txtboxContraseña.Text == listaUsuarios[i].Contraseña)
+                for (int i = 0; i < listaUsuarios.Count(); i++)
                 {
-                    MessageBox.Show("Bienvenido");
-                    Form2 frm2 = new Form2();
-                    this.Hide();
-                    frm2.Show();
+                    if ((txtboxNombre.Text == listaUsuarios[i].Nombre || txtboxNombre.Text == listaUsuarios[i].Mail) && txtboxContraseña.Text == listaUsuarios[i].Contraseña)
+                    {
+                        MessageBox.Show("Bienvenido");
+                        Form2 frm2 = new Form2();
+                        this.Hide();
+                        frm2.Show();
 
-                    break;
+                        break;
+                    }
+                    else if (i + 1 == listaUsuarios.Count())
+                    {
+                        MessageBox.Show("Usuario o contraseña incorrecta");
+                    }
                 }
-                else if (i + 1 == listaUsuarios.Count())
-                {
-                    MessageBox.Show("Usuario o contraseña incorrecta");
-                }
+            }
+            else
+            {
+                MessageBox.Show("Error, no debe dejar ningún espacio en blanco");
             }
         }
 

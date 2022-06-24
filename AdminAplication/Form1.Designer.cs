@@ -69,6 +69,7 @@
             this.txtboxNombre.Name = "txtboxNombre";
             this.txtboxNombre.Size = new System.Drawing.Size(132, 20);
             this.txtboxNombre.TabIndex = 7;
+            this.txtboxNombre.TextChanged += new System.EventHandler(this.txtboxNombre_TextChanged);
             // 
             // txtboxContraseña
             // 

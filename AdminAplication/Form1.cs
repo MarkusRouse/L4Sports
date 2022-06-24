@@ -26,21 +26,32 @@ namespace AdminAplication
         }
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            if (txtboxNombre.Text == nombreAdmin && txtboxContraseña.Text == contraseñaAdmin)
+            if ((txtboxNombre.Text.Trim() != "" && txtboxContraseña.Text.Trim() != ""))
             {
-                MessageBox.Show("Bienvenido");
-                Form2 ventanaAdmin = new Form2();
-                this.Hide();
-                ventanaAdmin.Show();
+                if (txtboxNombre.Text == nombreAdmin && txtboxContraseña.Text == contraseñaAdmin)
+                {
+                    MessageBox.Show("Bienvenido");
+                    Form2 ventanaAdmin = new Form2();
+                    this.Hide();
+                    ventanaAdmin.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Nombre de usuario o contraseña incorrecta");
+                }
             }
             else
             {
-                MessageBox.Show("Nombre de usuario o contraseña incorrecta");
+                MessageBox.Show("Error, no debe dejar ningún espacio en blanco");
             }
-                                    
         }
 
         private void txtContraseña_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtboxNombre_TextChanged(object sender, EventArgs e)
         {
 
         }
