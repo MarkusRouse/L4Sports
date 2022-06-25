@@ -96,12 +96,10 @@ namespace AdminAplication
 
         private void button1_Click(object sender, EventArgs e)
         {
-            pnlAdmUsuario.Show();
-            pnlAdmAdministradores.Hide();
-            /*
             pnlAdmUsuario.Visible = true;
             pnlAdmAdministradores.Visible = false;
-            */
+            pnlAdmPublicidad.Visible = false;
+
         }
 
         private void pnlAdmInicio_Paint(object sender, PaintEventArgs e)
@@ -116,12 +114,9 @@ namespace AdminAplication
 
         private void button2_Click(object sender, EventArgs e)
         {
-            pnlAdmUsuario.Hide();
-            pnlAdmAdministradores.Show();
-            /*
-            pnlAdmUsuario.Visible = false;
             pnlAdmAdministradores.Visible = true;
-            */
+            pnlAdmUsuario.Visible = false;
+            pnlAdmPublicidad.Visible = false;
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -191,6 +186,13 @@ namespace AdminAplication
                 lstboxAdministradores.Items.Remove(lstboxAdministradores.SelectedItem);
                 listaAdmins.RemoveAt(lstboxAdministradores.SelectedIndex + 1);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            pnlAdmPublicidad.Visible = true;
+            pnlAdmAdministradores.Visible = false;
+            pnlAdmUsuario.Visible = false;
         }
     }
 

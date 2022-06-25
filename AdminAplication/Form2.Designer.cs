@@ -43,6 +43,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.lstboxUsuarios = new System.Windows.Forms.ListBox();
             this.pnlAdmAdministradores = new System.Windows.Forms.Panel();
+            this.pnlAdmPublicidad = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtboxContraseñaAdmin = new System.Windows.Forms.TextBox();
@@ -83,6 +84,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Administrar publicidad";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -191,6 +193,7 @@
             // 
             // pnlAdmAdministradores
             // 
+            this.pnlAdmAdministradores.Controls.Add(this.pnlAdmPublicidad);
             this.pnlAdmAdministradores.Controls.Add(this.label5);
             this.pnlAdmAdministradores.Controls.Add(this.label6);
             this.pnlAdmAdministradores.Controls.Add(this.txtboxContraseñaAdmin);
@@ -198,12 +201,20 @@
             this.pnlAdmAdministradores.Controls.Add(this.btnEliminarAdministrador);
             this.pnlAdmAdministradores.Controls.Add(this.btnAñadirAdministrador);
             this.pnlAdmAdministradores.Controls.Add(this.lstboxAdministradores);
-            this.pnlAdmAdministradores.Location = new System.Drawing.Point(150, 5);
+            this.pnlAdmAdministradores.Location = new System.Drawing.Point(147, 5);
             this.pnlAdmAdministradores.Name = "pnlAdmAdministradores";
             this.pnlAdmAdministradores.Size = new System.Drawing.Size(651, 386);
             this.pnlAdmAdministradores.TabIndex = 9;
             this.pnlAdmAdministradores.Visible = false;
             this.pnlAdmAdministradores.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAdmAdministradores_Paint);
+            // 
+            // pnlAdmPublicidad
+            // 
+            this.pnlAdmPublicidad.Location = new System.Drawing.Point(0, 0);
+            this.pnlAdmPublicidad.Name = "pnlAdmPublicidad";
+            this.pnlAdmPublicidad.Size = new System.Drawing.Size(654, 386);
+            this.pnlAdmPublicidad.TabIndex = 8;
+            this.pnlAdmPublicidad.Visible = false;
             // 
             // label5
             // 
@@ -279,7 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(802, 390);
             this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -323,5 +334,6 @@
         private System.Windows.Forms.TextBox txtboxNombreAdmin;
         private System.Windows.Forms.Button btnAñadirAdministrador;
         private System.Windows.Forms.Button btnInicio;
+        private System.Windows.Forms.Panel pnlAdmPublicidad;
     }
 }
