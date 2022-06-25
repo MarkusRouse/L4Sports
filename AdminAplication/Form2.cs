@@ -11,14 +11,17 @@ using System.Windows.Forms;
 
 namespace AdminAplication
 {
-    
     public partial class Form2 : Form
     {
         List<Cliente> listaClientes = new List<Cliente>();
         List<User> listaAdmins = new List<User>();
+        ImageList imageList1 = new ImageList();
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
         public Form2()
         {
             InitializeComponent();
+            imageList1.ImageSize = new Size(18,18);
+            
         }
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -193,6 +196,58 @@ namespace AdminAplication
             pnlAdmPublicidad.Visible = true;
             pnlAdmAdministradores.Visible = false;
             pnlAdmUsuario.Visible = false;
+        }
+        //modificar esto, solo copié y pege para probar que hacía
+        private void btnAgregarPublicidad_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Multiselect = true;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if (openFileDialog1.FileNames != null)
+                {
+                    for (int i = 0; i < openFileDialog1.FileNames.Length; i++)
+                    {
+                        addImage(openFileDialog1.FileNames[i]);
+                    }
+                }
+                else
+                {
+                    addImage(openFileDialog1.FileName);
+                }
+            }
+        }
+        //y estoy también
+        private void addImage(string imageToLoad)
+        {
+            if (imageToLoad != "")
+            {
+                imageList1.Images.Add(Image.FromFile(imageToLoad));
+                lstboxPublicidad.BeginUpdate();
+                lstboxPublicidad.Items.Add(imageToLoad);
+                lstboxPublicidad.EndUpdate();
+            }
+        }
+        // arreglar esto
+        private void lstboxPublicidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstboxPublicidad.SelectedIndex.ToString() != null)
+            {
+                pctboxPublicidad.ImageLocation = lstboxPublicidad.SelectedItem.ToString();
+            }
+        }
+
+        private void btnEliminarPublicidad_Click(object sender, EventArgs e)
+        {
+            if (lstboxPublicidad.SelectedIndex != -1)
+            {
+                lstboxPublicidad.Items.Remove(lstboxPublicidad.SelectedItem);
+                imageList1.Images.RemoveAt(lstboxPublicidad.SelectedIndex + 1);
+            }
+            
+        }
+        private void pctboxPublicidad_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
