@@ -15,7 +15,7 @@ namespace AdminAplication
    
     public partial class Form1 : Form
     {
-        string nombreAdmin = "admin", contraseñaAdmin = "admin";
+        Autentication autentication = new Autentication();
         public Form1()
         {
             InitializeComponent();
@@ -26,24 +26,8 @@ namespace AdminAplication
         }
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            if ((txtboxNombre.Text.Trim() != "" && txtboxContraseña.Text.Trim() != ""))
-            {
-                if (txtboxNombre.Text == nombreAdmin && txtboxContraseña.Text == contraseñaAdmin)
-                {
-                    MessageBox.Show("Bienvenido");
-                    Form2 ventanaAdmin = new Form2();
-                    this.Hide();
-                    ventanaAdmin.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Nombre de usuario o contraseña incorrecta");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Error, no debe dejar ningún espacio en blanco");
-            }
+            Form2 frm2 = new Form2();
+            autentication.Login(txtboxNombre.Text,txtboxContraseña.Text,this,frm2);
         }
 
         private void txtContraseña_TextChanged(object sender, EventArgs e)

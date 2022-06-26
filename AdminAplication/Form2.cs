@@ -13,9 +13,10 @@ namespace AdminAplication
 {
     public partial class Form2 : Form
     {
-        List<Cliente> listaClientes = new List<Cliente>();
-        List<User> listaAdmins = new List<User>();
-        ImageList listaImagenes = new ImageList();
+        Client client = new Client();
+        Admin admin = new Admin();
+        Advertising advertising = new Advertising();
+        Form1 ventanaLogin = new Form1();
         OpenFileDialog openFileDialog1 = new OpenFileDialog();
         public Form2()
         {
@@ -23,71 +24,12 @@ namespace AdminAplication
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            openFileDialog1.Multiselect = true;
-            openFileDialog1.Filter = "Image Files (JPG,PNG)|*.JPG;*.PNG;";
+        openFileDialog1.Multiselect = true;
+        openFileDialog1.Filter = "Image Files (JPG,PNG)|*.JPG;*.PNG;";
         }
-        //verifica que no exista el usuario que se intenta añadir y luego se agrega
         private void button5_Click(object sender, EventArgs e)
         {
-            if ((txtboxContraseñaUsuario.Text).Trim() != "" && (txtboxNombreUsuario.Text).Trim() != "" && (txtboxMailUsuario.Text).Trim() != "")
-            {
-                if (txtboxMailUsuario.Text.Contains("@gmail.com") || txtboxMailUsuario.Text.Contains("@hotmail.com") || txtboxMailUsuario.Text.Contains("@outlook.com"))
-                {
-                    if (listaClientes.Count == 0)
-                    {
-                        Cliente cliente = new Cliente(txtboxNombreUsuario.Text, txtboxContraseñaUsuario.Text, txtboxMailUsuario.Text);
-                        listaClientes.Add(cliente);
-                        lstboxUsuarios.Items.Add(cliente.Datos2());
-                    }
-                    else
-                    {
-                        foreach (Cliente usuario in listaClientes)
-                        {
-                            if ((usuario.Nombre == txtboxNombreUsuario.Text && usuario.Mail == txtboxMailUsuario.Text))
-                            {
-                                MessageBox.Show("Ese usuario ya existe, por favor ingrese un nuevo usuario con otras características");
-                                break;
-                            }
-                            else if (usuario.Nombre == txtboxNombreUsuario.Text)
-                            {
-                                MessageBox.Show("Ya existe un usuario con ese nombre, por favor ingrese uno que no se esté usado");
-                                break;
-                            }else if (usuario.Mail == txtboxMailUsuario.Text)
-                            {
-                                MessageBox.Show("Ya existe un usuario con ese correo electrónico, por favor ingrese un usuario con otro correo");
-                                break;
-                            }
-                            else if (listaClientes.Last() == usuario)
-                            {
-                                Cliente cliente = new Cliente(txtboxNombreUsuario.Text, txtboxContraseñaUsuario.Text, txtboxMailUsuario.Text);
-                                listaClientes.Add(cliente);
-                                lstboxUsuarios.Items.Add(cliente.Datos2());
-                                break;
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("El campo de Email deve de tener un correo electrónico: @gmail.com,@hotmail.com o @outlook.com");
-                } 
-            } 
-            else
-            {
-                if (txtboxNombreUsuario.Text.Trim() == "")
-                {
-                    txtboxNombreUsuario.Clear();
-                }
-                if (txtboxContraseñaUsuario.Text.Trim() == "")
-                {
-                    txtboxContraseñaUsuario.Clear();
-                }
-                if (txtboxMailUsuario.Text.Trim() == "")
-                {
-                    txtboxMailUsuario.Clear();
-                }
-                MessageBox.Show("No debe dejar ninún espacio en blanco");
-            }
+            client.AddClient(txtboxContraseñaUsuario, txtboxNombreUsuario, txtboxMailUsuario, lstboxUsuarios);
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -105,11 +47,7 @@ namespace AdminAplication
 
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
-            if (lstboxUsuarios.SelectedIndex != -1)
-            {
-                lstboxUsuarios.Items.Remove(lstboxUsuarios.SelectedItem);
-                listaClientes.RemoveAt(lstboxUsuarios.SelectedIndex + 1);
-            }
+            client.RemoveClient(lstboxUsuarios);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -144,7 +82,6 @@ namespace AdminAplication
         private void button4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("cerrando sesión");
-            Form1 ventanaLogin = new Form1();
             this.Hide();
             ventanaLogin.Show();
         }
@@ -153,57 +90,15 @@ namespace AdminAplication
         {
 
         }
-        //verifica que no haya ningún espacio vacío a la hora de agregar un administrador, ni que tampoco exista uno con el nombre ingresado
+        
         private void btnAñadirAdministrador_Click(object sender, EventArgs e)
         {
-            if ((txtboxContraseñaAdmin.Text).Trim() != "" && (txtboxNombreAdmin.Text).Trim() != "")
-            {
-                if (listaAdmins.Count == 0)
-                {
-                    User admin = new User(txtboxNombreAdmin.Text, txtboxContraseñaAdmin.Text);
-                    listaAdmins.Add(admin);
-                    lstboxAdministradores.Items.Add(admin.Datos1());
-                }
-                else
-                {
-                    foreach (User usuario in listaAdmins)
-                    {
-                        if (usuario.Nombre == txtboxNombreAdmin.Text)
-                        {
-                            MessageBox.Show("El administrador ya existe, por favor ingrese uno con otro nombre");
-                            break;
-                        }
-                        else if (listaAdmins.Last() == usuario)
-                        {
-                            User admin = new User(txtboxNombreAdmin.Text, txtboxContraseñaAdmin.Text);
-                            listaAdmins.Add(admin);
-                            lstboxAdministradores.Items.Add(admin.Datos1());
-                            break;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                if (txtboxNombreAdmin.Text.Trim() == "")
-                {
-                    txtboxNombreAdmin.Clear();
-                }
-                if (txtboxContraseñaAdmin.Text.Trim() == "")
-                {
-                    txtboxContraseñaAdmin.Clear();
-                }
-                MessageBox.Show("No debe dejar ninún espacio en blanco");
-            }
+            admin.AddAdmin(txtboxContraseñaAdmin, txtboxNombreAdmin, lstboxAdministradores);
         }
 
         private void btnEliminarAdministrador_Click(object sender, EventArgs e)
         {
-            if (lstboxAdministradores.SelectedIndex != -1)
-            {
-                lstboxAdministradores.Items.Remove(lstboxAdministradores.SelectedItem);
-                listaAdmins.RemoveAt(lstboxAdministradores.SelectedIndex + 1);
-            }
+            admin.RemoveAdmin(lstboxAdministradores);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -212,35 +107,11 @@ namespace AdminAplication
             pnlAdmAdministradores.Visible = false;
             pnlAdmUsuario.Visible = false;
         }
-
-        //abre una ventana que deja selecionar las imagenes parqa agregar, solo jpg y png 
         private void btnAgregarPublicidad_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                if (openFileDialog1.FileNames != null)
-                {
-                    for (int i = 0; i < openFileDialog1.FileNames.Length; i++)
-                    {
-                       añadirImagen(openFileDialog1.FileNames[i]);
-                    }
-                }
-                else
-                {
-                    añadirImagen(openFileDialog1.FileName);
-                }
-            }
+            advertising.AddAd(lstboxPublicidad,openFileDialog1);
         }
-        //añade la ruta de la imagen a la lista de imagenes y al picture box
-        private void añadirImagen(string rutaImagen)
-        {
-            if (rutaImagen != "")
-            {
-                    listaImagenes.Images.Add(Image.FromFile(rutaImagen));
-                    lstboxPublicidad.Items.Add(rutaImagen);
-            }
-        }
-        //actualiza la imagen seleccionada en el listbox al picturebox
+
         private void lstboxPublicidad_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstboxPublicidad.SelectedItem != null)
@@ -251,16 +122,10 @@ namespace AdminAplication
                 }
             }
         }
-        //elimina la imagen seleccionada en el listbox y en el picturebox, también deja de mostrar la imagen en el pixturebox
+       
         private void btnEliminarPublicidad_Click(object sender, EventArgs e)
         {
-            if (lstboxPublicidad.SelectedIndex != -1)
-            {
-                lstboxPublicidad.Items.Remove(lstboxPublicidad.SelectedItem);
-                listaImagenes.Images.RemoveAt(lstboxPublicidad.SelectedIndex + 1);
-                pctboxPublicidad.Image = null;
-            }
-            
+            advertising.RemoveAd(lstboxPublicidad,pctboxPublicidad);
         }
         private void pctboxPublicidad_Click(object sender, EventArgs e)
         {
@@ -277,78 +142,4 @@ namespace AdminAplication
 
         }
     }
-
-    public class User
-    {
-        string nombre, contraseña;
-
-        public string Nombre
-        {
-            set
-            {
-                nombre = value;
-            }
-            get
-            {
-                return nombre;
-            }
-        }
-
-        public string Contraseña
-        {
-            set
-            {
-                contraseña = value;
-            }
-            get
-            {
-                return contraseña;
-            }
-        }
-
-        public User()
-        {
-
-        }
-        public User(string nombre,string contraseña)
-        {
-            this.nombre = nombre;
-            this.contraseña = contraseña;
-        }
-        public string Datos1()
-        {
-            return (nombre + " " + contraseña);
-        }
-    }
-    public class Cliente : User
-    {
-        string mail;
-
-        public string Mail
-        {
-            set
-            {
-                mail = value;
-            }
-            get
-            {
-                return mail;
-            }
-        }
-        public Cliente()
-        {
-
-        }
-        public Cliente(string _nombre,string _contraseña,string _mail)
-        {
-            Nombre = _nombre;
-            Contraseña = _contraseña;
-            mail = _mail;
-        }
-        public string Datos2()
-        {
-            return (Nombre + " " + Contraseña + " " + mail);
-        }
-    }
-
 }
