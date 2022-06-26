@@ -346,9 +346,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnInicio);
+            this.Controls.Add(this.pnlAdmUsuario);
             this.Controls.Add(this.pnlAdmPublicidad);
             this.Controls.Add(this.pnlAdmAdministradores);
-            this.Controls.Add(this.pnlAdmUsuario);
             this.Name = "Form2";
             this.Text = "Administrador";
             this.Load += new System.EventHandler(this.Form2_Load);

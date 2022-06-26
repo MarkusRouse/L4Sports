@@ -31,30 +31,46 @@ namespace AdminAplication
         {
             if ((txtboxContraseñaUsuario.Text).Trim() != "" && (txtboxNombreUsuario.Text).Trim() != "" && (txtboxMailUsuario.Text).Trim() != "")
             {
-                if (listaClientes.Count == 0)
+                if (txtboxMailUsuario.Text.Contains("@gmail.com") || txtboxMailUsuario.Text.Contains("@hotmail.com") || txtboxMailUsuario.Text.Contains("@outlook.com"))
                 {
-                    Cliente cliente = new Cliente(txtboxNombreUsuario.Text, txtboxContraseñaUsuario.Text, txtboxMailUsuario.Text);
-                    listaClientes.Add(cliente);
-                    lstboxUsuarios.Items.Add(cliente.Datos2());
-                }
-                else
-                {
-                    foreach (Cliente usuario in listaClientes)
+                    if (listaClientes.Count == 0)
                     {
-                        if (usuario.Nombre == txtboxNombreUsuario.Text || usuario.Mail == txtboxMailUsuario.Text)
+                        Cliente cliente = new Cliente(txtboxNombreUsuario.Text, txtboxContraseñaUsuario.Text, txtboxMailUsuario.Text);
+                        listaClientes.Add(cliente);
+                        lstboxUsuarios.Items.Add(cliente.Datos2());
+                    }
+                    else
+                    {
+                        foreach (Cliente usuario in listaClientes)
                         {
-                            MessageBox.Show("El usuario ya existe, por favor ingrese uno con otras características");
-                            break;
-                        }
-                        else if (listaClientes.Last() == usuario)
-                        {
-                            Cliente cliente = new Cliente(txtboxNombreUsuario.Text, txtboxContraseñaUsuario.Text, txtboxMailUsuario.Text);
-                            listaClientes.Add(cliente);
-                            lstboxUsuarios.Items.Add(cliente.Datos2());
-                            break;
+                            if ((usuario.Nombre == txtboxNombreUsuario.Text && usuario.Mail == txtboxMailUsuario.Text))
+                            {
+                                MessageBox.Show("Ese usuario ya existe, por favor ingrese un nuevo usuario con otras características");
+                                break;
+                            }
+                            else if (usuario.Nombre == txtboxNombreUsuario.Text)
+                            {
+                                MessageBox.Show("Ya existe un usuario con ese nombre, por favor ingrese uno que no se esté usado");
+                                break;
+                            }else if (usuario.Mail == txtboxMailUsuario.Text)
+                            {
+                                MessageBox.Show("Ya existe un usuario con ese correo electrónico, por favor ingrese un usuario con otro correo");
+                                break;
+                            }
+                            else if (listaClientes.Last() == usuario)
+                            {
+                                Cliente cliente = new Cliente(txtboxNombreUsuario.Text, txtboxContraseñaUsuario.Text, txtboxMailUsuario.Text);
+                                listaClientes.Add(cliente);
+                                lstboxUsuarios.Items.Add(cliente.Datos2());
+                                break;
+                            }
                         }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("El campo de Email deve de tener un correo electrónico: @gmail.com,@hotmail.com o @outlook.com");
+                } 
             } 
             else
             {
