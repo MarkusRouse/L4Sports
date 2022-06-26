@@ -122,11 +122,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(118, 255);
+            this.label3.Location = new System.Drawing.Point(112, 255);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Mail";
+            this.label3.Text = "Email";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -153,6 +154,7 @@
             this.txtboxMailUsuario.Name = "txtboxMailUsuario";
             this.txtboxMailUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtboxMailUsuario.TabIndex = 5;
+            this.txtboxMailUsuario.TextChanged += new System.EventHandler(this.txtboxMailUsuario_TextChanged);
             // 
             // txtboxContraseñaUsuario
             // 
@@ -283,6 +285,7 @@
             this.pnlAdmPublicidad.Name = "pnlAdmPublicidad";
             this.pnlAdmPublicidad.Size = new System.Drawing.Size(654, 386);
             this.pnlAdmPublicidad.TabIndex = 8;
+            this.pnlAdmPublicidad.Visible = false;
             // 
             // btnAgregarPublicidad
             // 

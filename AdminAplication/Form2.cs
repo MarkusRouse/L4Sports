@@ -15,19 +15,18 @@ namespace AdminAplication
     {
         List<Cliente> listaClientes = new List<Cliente>();
         List<User> listaAdmins = new List<User>();
-        ImageList imageList1 = new ImageList();
+        ImageList listaImagenes = new ImageList();
         OpenFileDialog openFileDialog1 = new OpenFileDialog();
         public Form2()
         {
-            InitializeComponent();
-            imageList1.ImageSize = new Size(18,18);
-            
+            InitializeComponent();   
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            openFileDialog1.Multiselect = true;
+            openFileDialog1.Filter = "Image Files (JPG,PNG)|*.JPG;*.PNG;";
         }
-
+        //verifica que no exista el usuario que se intenta añadir y luego se agrega
         private void button5_Click(object sender, EventArgs e)
         {
             if ((txtboxContraseñaUsuario.Text).Trim() != "" && (txtboxNombreUsuario.Text).Trim() != "" && (txtboxMailUsuario.Text).Trim() != "")
@@ -138,7 +137,7 @@ namespace AdminAplication
         {
 
         }
-
+        //verifica que no haya ningún espacio vacío a la hora de agregar un administrador, ni que tampoco exista uno con el nombre ingresado
         private void btnAñadirAdministrador_Click(object sender, EventArgs e)
         {
             if ((txtboxContraseñaAdmin.Text).Trim() != "" && (txtboxNombreAdmin.Text).Trim() != "")
@@ -197,55 +196,67 @@ namespace AdminAplication
             pnlAdmAdministradores.Visible = false;
             pnlAdmUsuario.Visible = false;
         }
-        //modificar esto, solo copié y pege para probar que hacía
+
+        //abre una ventana que deja selecionar las imagenes parqa agregar, solo jpg y png 
         private void btnAgregarPublicidad_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Multiselect = true;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 if (openFileDialog1.FileNames != null)
                 {
                     for (int i = 0; i < openFileDialog1.FileNames.Length; i++)
                     {
-                        addImage(openFileDialog1.FileNames[i]);
+                       añadirImagen(openFileDialog1.FileNames[i]);
                     }
                 }
                 else
                 {
-                    addImage(openFileDialog1.FileName);
+                    añadirImagen(openFileDialog1.FileName);
                 }
             }
         }
-        //y estoy también
-        private void addImage(string imageToLoad)
+        //añade la ruta de la imagen a la lista de imagenes y al picture box
+        private void añadirImagen(string rutaImagen)
         {
-            if (imageToLoad != "")
+            if (rutaImagen != "")
             {
-                imageList1.Images.Add(Image.FromFile(imageToLoad));
-                lstboxPublicidad.BeginUpdate();
-                lstboxPublicidad.Items.Add(imageToLoad);
-                lstboxPublicidad.EndUpdate();
+                    listaImagenes.Images.Add(Image.FromFile(rutaImagen));
+                    lstboxPublicidad.Items.Add(rutaImagen);
             }
         }
-        // arreglar esto
+        //actualiza la imagen seleccionada en el listbox al picturebox
         private void lstboxPublicidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstboxPublicidad.SelectedIndex.ToString() != null)
+            if (lstboxPublicidad.SelectedItem != null)
             {
-                pctboxPublicidad.ImageLocation = lstboxPublicidad.SelectedItem.ToString();
+                if (lstboxPublicidad.SelectedIndex != -1)
+                {
+                    pctboxPublicidad.ImageLocation = lstboxPublicidad.SelectedItem.ToString();
+                }
             }
         }
-
+        //elimina la imagen seleccionada en el listbox y en el picturebox, también deja de mostrar la imagen en el pixturebox
         private void btnEliminarPublicidad_Click(object sender, EventArgs e)
         {
             if (lstboxPublicidad.SelectedIndex != -1)
             {
                 lstboxPublicidad.Items.Remove(lstboxPublicidad.SelectedItem);
-                imageList1.Images.RemoveAt(lstboxPublicidad.SelectedIndex + 1);
+                listaImagenes.Images.RemoveAt(lstboxPublicidad.SelectedIndex + 1);
+                pctboxPublicidad.Image = null;
             }
             
         }
         private void pctboxPublicidad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtboxMailUsuario_TextChanged(object sender, EventArgs e)
         {
 
         }
