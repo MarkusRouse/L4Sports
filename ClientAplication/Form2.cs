@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClientAplication
-{
+{   
     public partial class Form2 : Form
     {
+        Advertising advertising = new Advertising();
         public Form2()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace ClientAplication
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            pctBox1Aplicación.ImageLocation = @"..\Image\Tria Mentems.png";
+            advertising.SetAds(pctBox1Aplicación);
         }
     }
 }
