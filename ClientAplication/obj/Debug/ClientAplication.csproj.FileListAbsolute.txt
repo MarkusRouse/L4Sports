@@ -8,3 +8,4 @@ C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\obj\Debug\Client
 C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\obj\Debug\ClientAplication.csproj.CoreCompileInputs.cache
 C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\obj\Debug\ClientAplication.exe
 C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\obj\Debug\ClientAplication.pdb
+C:\Users\MarkusRouse\Desktop\Proyecto\L4Sports\ClientAplication\obj\Debug\ClientAplication.Form2.resources
